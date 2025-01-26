@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flash Recode</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+<body class="dark-theme">
+    <div class="container">
+        <div class="sidebar">
+            <div class="sidebar-header">
+                <h1>Flash Recode</h1>
+                <button id="newChatBtn" class="new-chat-btn">
+                    <span class="material-icons">add</span>
+                    Новый чат
+                </button>
+            </div>
+            <div class="chats-list" id="chatsList"></div>
+            <div class="chat-info">
+                <div class="token-counter">
+                    Токены: <span id="tokenCount">0</span>/100000
+                </div>
+                <button id="exportChatBtn" class="export-chat-btn">
+                    <span class="material-icons">file_download</span>
+                    Экспорт
+                </button>
+                <button id="settingsBtn" class="settings-btn">
+                    <span class="material-icons">settings</span>
+                    Настройки
+                </button>
+            </div>
+        </div>
+        <div class="chat-container">
+            <div class="chat-messages" id="chatMessages"></div>
+            <div class="message-input-container">
+                <textarea id="messageInput" placeholder="Введите сообщение..."></textarea>
+                <button id="sendMessage">
+                    <span class="material-icons">send</span>
+                </button>
+            </div>
+            <button id="clearChatBtn" class="clear-chat-btn">
+                <span class="material-icons">delete_sweep</span>
+                Очистить чат
+            </button>
+        </div>
+    </div>
+
+    <!-- Модальное окно настроек -->
+    <div id="settingsModal" class="modal">
+        <div class="modal-content">
+            <div class="settings-header">
+                <span class="material-icons settings-icon">settings</span>
+                <h2>Настройки</h2>
+            </div>
+            <div class="settings-group">
+                <div class="setting-label">
+                    <span class="material-icons">device_thermostat</span>
+                    <label>Температура генерации</label>
+                </div>
+                <div class="setting-control">
+                    <input type="range" id="tempSlider" min="0" max="1" step="0.1" value="0.7">
+                    <span id="tempValue">0.7</span>
+                </div>
+            </div>
+            <div class="settings-group">
+                <div class="setting-label">
+                    <span class="material-icons">text_fields</span>
+                    <label>Максимальные токены</label>
+                </div>
+                <div class="setting-control">
+                    <input type="number" id="maxTokens" value="2048" min="1" max="4096">
+                </div>
+            </div>
+            <div class="settings-group">
+                <div class="setting-label">
+                    <span class="material-icons">psychology</span>
+                    <label>Системный промпт</label>
+                </div>
+                <div class="setting-control">
+                    <textarea id="systemPrompt" placeholder="Введите системный промпт..." rows="4"></textarea>
+                </div>
+            </div>
+            <button id="closeSettings" class="close-settings-btn">
+                <span class="material-icons">close</span>
+                Закрыть
+            </button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/docx/0.16.2/docx.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/2.0.5/FileSaver.min.js"></script>
+</body>
+</html>

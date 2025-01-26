@@ -1,0 +1,10 @@
+{
+    "name": "Flash Recode",
+    "short_name": "FlashRecode",
+    "description": "AI Chat Application",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#202123",
+    "theme_color": "#10a37f",
+    "icons": []
+} 
